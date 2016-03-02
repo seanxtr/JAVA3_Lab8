@@ -39,22 +39,22 @@ public class Foothill
          minRt = new TestResult(0,0,Integer.MAX_VALUE);
          
          for (limit = RL_MIN; limit <= RL_MAX; limit+= RL_INCREMENT) {
-        	 FHsort.setRecursionLimit(limit);
-        	 
-        	 // copy the test array
-        	 testArray = arrayOfInts1.clone();
+            FHsort.setRecursionLimit(limit);
+
+            // copy the test array
+            testArray = arrayOfInts1.clone();
              
-        	 startTime = System.nanoTime();  // ------------------ start 
-             FHsort.quickSort(testArray);
-             stopTime = System.nanoTime();    // ---------------------- stop
+            startTime = System.nanoTime();  // ------------------ start 
+            FHsort.quickSort(testArray);
+            stopTime = System.nanoTime();    // ---------------------- stop
              
-             System.out.printf("quickSort(%d,%d) Elapsed Time %s seconds%n",
-                limit, arraySize, tidy.format( (stopTime - startTime) / 1e9));
+            System.out.printf("quickSort(%d,%d) Elapsed Time %s seconds%n",
+               limit, arraySize, tidy.format( (stopTime - startTime) / 1e9));
              
-             TestResult rt = new TestResult(limit, arraySize, stopTime - startTime);
-             if (rt.time < minRt.time)
-                minRt = rt;
-             results.add(rt);
+            TestResult rt = new TestResult(limit, arraySize, stopTime - startTime);
+            if (rt.time < minRt.time)
+               minRt = rt;
+            results.add(rt);
          }
          
         minRt.isMin = true;
@@ -73,18 +73,18 @@ public class Foothill
       int column = 0;
       
       while (itr.hasNext()) {
-    	  temp = (TestResult)itr.next();
-    	  
-    	  if (column == 0)
-    		  System.out.print(String.format("%-10s %-8s", temp.size, temp));
-    	  else {
-    		  System.out.print(String.format("%-8s", temp));
-        	  if (column >= 149) {
-        		  System.out.println();
-        		  column = -1;
-        	  }
-    	  }
-    	  column++;
+         temp = (TestResult)itr.next();
+
+         if (column == 0)
+            System.out.print(String.format("%-10s %-8s", temp.size, temp));
+         else {
+            System.out.print(String.format("%-8s", temp));
+            if (column >= 149) {
+               System.out.println();
+               column = -1;
+            }
+         }
+         column++;
       }
    }
 }

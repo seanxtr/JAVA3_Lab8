@@ -1,6 +1,4 @@
-import java.text.NumberFormat;
-import java.util.Locale;
-
+// ---------- Class Definition of TestResult -----------
 public class TestResult {
 	public int limit;
 	public int size;
