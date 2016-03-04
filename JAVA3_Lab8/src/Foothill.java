@@ -15,7 +15,7 @@ public class Foothill
       final int RL_MAX = 300;
       final int RL_INCREMENT = 2;
       final int ARRAY_SIZE_MIN = 20000;
-      final int ARRAY_SIZE_MAX = 1200000;
+      final int ARRAY_SIZE_MAX = 1100000;
       final int ARRAY_SIZE_INCREMENT = 50000;
       int k, randomInt, arraySize, limit;
       long startTime, stopTime; 

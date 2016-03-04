@@ -213,16 +213,16 @@ public class FHsort
    protected static < E extends Comparable< ? super E > > 
    void insertionSort(E[] a, int start, int stop)
    {
-      int k, pos;
+      int j, i;
       E tmp;
  
       // we are not testing for ranges to keep times down - private so ok
-      for(pos = start + 1; pos <= stop; pos++ )
+      for(i = start + 1; i <= stop; i++ )
       {
-         tmp = a[pos];
-         for(k = pos; k > 0 && tmp.compareTo(a[k-1]) < 0; k-- )
-            a[k] = a[k-1];
-         a[k] = tmp;
+         tmp = a[i];
+         for(j = i - 1; j > 0 && tmp.compareTo(a[j]) < 0; j-- )
+            a[j + 1] = a[j];
+         a[j + 1] = tmp;
       }
    }
    
